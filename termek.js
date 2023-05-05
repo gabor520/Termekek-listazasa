@@ -1,26 +1,30 @@
-import Termekek from "./termekek"
+class Termek {
+  #adat;
+  #divElem;
+  #buttonElem;
 
-class Termek{
+  constructor(adat, szuloElem) {
+    this.#adat = adat;
+    szuloElem.append(
+      `<div>p>${this.#adat.nev}</p><p>${this.#adat.kor}</p><p>${
+        this.#adat.sport
+      }</p><button>Kedvencekhez ad</button></div>`
+    );
+    this.#divElem = szuloElem.children("div:last-child");
+    this.#buttonElem = this.#divElem.children("button");
+
+    this.#divElem.on("click", () => {
+      this.esemenyTrigger();
+    });
+
+  
+
    
-    
+  }
 
-
-
-    constructor(adat,SzuloElem){
-    this.#adat
-    this.#divElem
-    this.#buttonElem
-    SzuloElem.append('<div class="#divElem">
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <button></button>
-                    </div>');
- 
-
-
-
-    }
-
+  esemenyTrigger(){
+    const e = new CustomEvent("123", { detail: this.adat });
+    window.dispatchEvent(e);
+  }
 }
-export default Termek
+export default Termek;
