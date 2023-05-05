@@ -19,5 +19,13 @@ class Aszinkron{
         .catch((error)=> console.log(error));
 
     }
+    adatTorles(vegpont,id){
+        vegpont=vegpont+"/"+id
+        console.log(vegpont);
+        fetch(vegpont,{
+            method: "DELETE",
+        })
+        
+    }
 }
 export default Aszinkron;

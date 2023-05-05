@@ -12,6 +12,7 @@ class Termek {
     );
     this.#divElem = szuloElem.children("div:last-child");
     this.#buttonElem = this.#divElem.children("button");
+    this.#torolButtonElem = this.#divElem.children(".torol:last-child");
 
     this.#divElem.on("click", () => {
       this.esemenyTrigger();
